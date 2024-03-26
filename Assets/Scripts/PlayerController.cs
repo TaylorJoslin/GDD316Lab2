@@ -23,11 +23,6 @@ public class PlayerController : MonoBehaviour
         //allows player to move with WASD
         InputKey = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-
-    }
-
-    private void FixedUpdate()
-    {
         //how fast the player moves
         rb.velocity = InputKey * speed;
 
@@ -36,5 +31,11 @@ public class PlayerController : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(InputKey.normalized);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
         }
+
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 }

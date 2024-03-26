@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnPlayer : MonoBehaviour
+public class Spawn : MonoBehaviour
 {
     [SerializeField] GameObject PlayerPreFab;
+    [SerializeField] float X, Y, Z;
+    [SerializeField] float rX, rY, rZ;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(PlayerPreFab, new Vector3(57.769f, 5.413f, 2.424f), Quaternion.identity);
+        Instantiate(PlayerPreFab, new Vector3(X, Y, Z), Quaternion.Euler(rX,rY,rZ));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
